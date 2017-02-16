@@ -4,8 +4,11 @@ import javax.swing.JOptionPane;
 
 /**
  * Describe responsibilities here.
- *
- * @author your name goes here
+ * The main responsibilities of the class is to provide the class information and display it.
+ * 
+ * This class achieves this by implementing all of the abstract methods from the interface
+ * and writing the code for the bodies of those methods.
+ * @author Aaron Gnas
  * @version 1.00
  */
 public class AdvancedJavaCourse implements Course {
@@ -16,6 +19,7 @@ public class AdvancedJavaCourse implements Course {
     private String prerequisites;
 
     public AdvancedJavaCourse(String courseName, String courseNumber, double numberOfCreditsForCourse, String prerequisites) {
+        //is super needed for interfaces?
         super();
         this.courseName = courseName;
         this.courseNumber = courseNumber;
