@@ -2,7 +2,7 @@ package lab2;
 
 /**
  *
- * @author Aaron
+ * @author Aaron Gnas
  */
 //This class has methods below that are common to all the subclasses
 //They are abstract because this is an interface

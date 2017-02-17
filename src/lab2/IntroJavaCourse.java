@@ -4,8 +4,13 @@ import javax.swing.JOptionPane;
 
 /**
  * Describe responsibilities here.
+ * The main responsibilities of the class is to provide the class information and display it.
+ * 
+ * This class achieves this by implementing all of the abstract methods from the interface
+ * and writing the code for the bodies of those methods. This class also has a prerequisites
+ * field since not every class will have a prerequisite.
  *
- * @author      your name goes here
+ * @author      Aaron Gnas
  * @version     1.00
  */
 public class IntroJavaCourse implements Course {

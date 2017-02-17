@@ -4,8 +4,13 @@ import javax.swing.JOptionPane;
 
 /**
  * Describe responsibilities here.
- *
- * @author      your name goes here
+ * The main responsibilities of the class is to provide the class information and display it.
+ * 
+ * This class achieves this by implementing all of the abstract methods from the interface
+ * and writing the code for the bodies of those methods. This class is an example where there
+ * are no prerequisites
+ * 
+ * @author      Aaron Gnas
  * @version     1.00
  */
 public class IntroToProgrammingCourse implements Course {
@@ -65,7 +70,7 @@ public class IntroToProgrammingCourse implements Course {
         this.numberOfCreditsForCourse = numberOfCreditsForCourse;
     }
 
-    //here is the overridden method that includes the 4 fields this class supports
+    //here is the overridden method that includes the 3 fields this class supports
     @Override
     public String displayCourseDetails() {
         String courseDetails;
