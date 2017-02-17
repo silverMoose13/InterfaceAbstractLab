@@ -19,8 +19,6 @@ public class AdvancedJavaCourse implements Course {
     private String prerequisites;
 
     public AdvancedJavaCourse(String courseName, String courseNumber, double numberOfCreditsForCourse, String prerequisites) {
-        //is super needed for interfaces?
-        super();
         this.courseName = courseName;
         this.courseNumber = courseNumber;
         this.numberOfCreditsForCourse = numberOfCreditsForCourse;

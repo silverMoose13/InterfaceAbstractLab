@@ -20,7 +20,8 @@ public class Startup {
         System.out.println(newAdvJavaCourse.displayCourseDetails());
 
         College addCourse = new College("Advanced Java");
-        System.out.println(addCourse.getCourseName());
+        System.out.println(addCourse.addCourseNameToDatabase());
+        System.out.println("List of courses in the database: \n" + addCourse.displayCourseNameDatabase());
 
     }
 

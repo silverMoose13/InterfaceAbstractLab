@@ -1,13 +1,16 @@
-package lab1;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package lab2;
 
 import java.util.ArrayList;
 
 /**
  *
- * @author Aaron Gnas
+ * @author agnas
  */
-//the purpose of this class is to take course names and add them to the
-//the semester inventory
 public class College {
 
     private String courseName;
@@ -42,7 +45,7 @@ public class College {
         return "This course name has been successfully added to the semester"
                 + " inventory!\n";
     }
-    
+
     //enhanced for loop is the better choice here since we aren't looking
     //to pick out the contents of a particular index in the current responsibilities of the class
     public String displayCourseNameDatabase() {
@@ -50,15 +53,14 @@ public class College {
 //            System.out.println(courseNameDatabase.get(index));
 //        }   
         String line = "";
-        for (String element: courseNameDatabase) {
+        for (String element : courseNameDatabase) {
             line += element + "\n";
         }
         return line;
     }
-    
+
 //    public void displayCourseNameDatabase() {
 //        for (int index = 0; index < courseNameDatabase.size(); index++) {
 //            System.out.println(courseNameDatabase.get(index));
 //        } 
-
 }

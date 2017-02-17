@@ -20,8 +20,8 @@ public abstract class Course {
 
     //The setter for course name will always be written this way and won't change.
     //This is why I have moved it to the abstract class Course. It is
-    //also set to final since there will be no overriding being done in the subclasses.
-    public final void setCourseName(String courseName) {
+    //not set to final because the course name could change
+    public void setCourseName(String courseName) {
         if (courseName == null || courseName.length() == 0) {
             JOptionPane.showMessageDialog(null,
                     "Error: courseName cannot be null or an empty string");
