@@ -39,7 +39,7 @@ public abstract class Course {
     //The setter for course number will always be written this way and won't change.
     //As a result, it is set to final and placed in the abstract superclass Course.
     public final void setCourseNumber(String courseNumber) {
-        if (courseNumber == null || courseNumber.length() != 6 || courseNumber.length() != 7) {
+        if (courseNumber == null || courseNumber.length() < 6 || courseNumber.length() > 7) {
             output.performOutput("Error: courseNumber cannot be null and must follow"
                     + "format of 111-111 or 111111.");
             System.exit(0);

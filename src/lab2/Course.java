@@ -17,7 +17,7 @@ public interface Course {
     public abstract void setCourseNumber(String courseNumber);
     public abstract double getNumberOfCreditsForCourse();
     public abstract void setNumberOfCreditsForCourse(double numberOfCreditsForCourse);
-    public abstract String displayCourseDetails();
+    public abstract String getCourseDetails();
     
     
 }

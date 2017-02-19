@@ -1,7 +1,5 @@
 package lab1;
 
-import javax.swing.JOptionPane;
-
 /**
  * Describe responsibilities here. The responsibility of this course is to
  * acquire the class details and display them. It achieves this by utilizing the

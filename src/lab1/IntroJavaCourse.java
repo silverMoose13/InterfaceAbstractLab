@@ -1,7 +1,5 @@
 package lab1;
 
-import javax.swing.JOptionPane;
-
 /**
  * Describe responsibilities here. This class has the same responsibilities as
  * the advanced java course class. Details below:
