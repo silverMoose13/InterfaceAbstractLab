@@ -11,7 +11,7 @@ package lab1;
  * IntroToProgramming has a slightly varied role than the other 2 java classes.
  * Instead of having 4 fields to gather information on using the superclass concrete
  * methods, there are only 3 fields. Once this information is obtained, the course details
- * will be displayed using an overridden method.
+ * will be retrieved using an overridden method.
  * 
  * @author Aaron Gnas
  * @version 1.00
@@ -19,7 +19,6 @@ package lab1;
 public class IntroToProgrammingCourse extends Course {
 
     public IntroToProgrammingCourse(String courseName, String courseNumber, double numberOfCreditsForCourse) {
-        super();
         this.setCourseName(courseName);
         this.setCourseNumber(courseNumber);
         this.setNumberOfCreditsForCourse(numberOfCreditsForCourse);
@@ -27,7 +26,7 @@ public class IntroToProgrammingCourse extends Course {
 
     //this class has only 3 fields it needs to use
     @Override
-    public String displayCourseDetails() {
+    public String getCourseDetails() {
         String courseDetails;
         courseDetails = ("Course Name: " + getCourseName()
                 + "\nCourse Number: " + getCourseNumber()

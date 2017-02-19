@@ -1,11 +1,9 @@
 package lab1;
 
-import javax.swing.JOptionPane;
-
 //the overall responsibility of this class is to provide a few
 //basic methods that set and retrieve the courseName, courseNumber, and credits.
 //It also has the capability to display the course details which will be abstract
-//since not every class has the same fields to display
+//since not every class has the same fields.
 public abstract class Course {
 
     //members are all set to private now as they weren't before.
@@ -13,18 +11,22 @@ public abstract class Course {
     private String courseNumber;
     //refactored the name of this member as credits wasn't descriptive enough
     private double numberOfCreditsForCourse;
+    private PrintServices output;
+
+    public Course() {
+        output = new PrintServices();
+    }
 
     public String getCourseName() {
         return courseName;
     }
 
-    //The setter for course name will always be written this way and won't change.
-    //This is why I have moved it to the abstract class Course. It is
-    //not set to final because the course name could change
+    //The setter for course name should always stay this way. This is why I have 
+    //moved it to the abstract class Course. However, it is
+    //not set to final because the course name could change in time.
     public void setCourseName(String courseName) {
         if (courseName == null || courseName.length() == 0) {
-            JOptionPane.showMessageDialog(null,
-                    "Error: courseName cannot be null or an empty string");
+            output.performOutput("Error: courseName cannot be null or an empty string");
             System.exit(0);
         }
         this.courseName = courseName;
@@ -37,9 +39,9 @@ public abstract class Course {
     //The setter for course number will always be written this way and won't change.
     //As a result, it is set to final and placed in the abstract superclass Course.
     public final void setCourseNumber(String courseNumber) {
-        if (courseNumber == null || courseNumber.length() == 0) {
-            JOptionPane.showMessageDialog(null,
-                    "Error: courseNumber cannot be null or an empty string");
+        if (courseNumber == null || courseNumber.length() != 6 || courseNumber.length() != 7) {
+            output.performOutput("Error: courseNumber cannot be null and must follow"
+                    + "format of 111-111 or 111111.");
             System.exit(0);
         }
         this.courseNumber = courseNumber;
@@ -52,9 +54,8 @@ public abstract class Course {
     //make this a concrete method in the super class. Credits will change
     //but the body of the method won't
     public final void setNumberOfCreditsForCourse(double numberOfCreditsForCourse) {
-        if (numberOfCreditsForCourse < 0 || numberOfCreditsForCourse > 5.0) {
-            System.out.println(
-                    "Error: credits must be in the range 0 to 5.0");
+        if (numberOfCreditsForCourse < 0.0 || numberOfCreditsForCourse > 5.0) {
+            output.performOutput("Error: credits must be in the range 0.0 to 5.0");
             System.exit(0);
         }
         //this line had to be fixed. The previous code had recursed infinitely.
@@ -66,6 +67,6 @@ public abstract class Course {
     //In addition this is also abstract because down the road as more classes
     //get added, there may be even more fields and variability that are unique
     //to certain subclasses
-    public abstract String displayCourseDetails();
+    public abstract String getCourseDetails();
 
 }

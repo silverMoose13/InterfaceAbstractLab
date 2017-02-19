@@ -9,19 +9,21 @@ package lab1;
 public class Startup {
 
     public static void main(String[] args) {
+        
+        PrintServices output = new PrintServices();
 
         IntroToProgrammingCourse newProgCourse = new IntroToProgrammingCourse("Intro to Programming", "103-032", 3.0);
-        System.out.println(newProgCourse.displayCourseDetails());
+        output.performOutput(newProgCourse.getCourseDetails());
         
         IntroJavaCourse newJavaCourse = new IntroJavaCourse("Intro to Java", "103-042", 4.0, "Intro to Programming\n");
-        System.out.println("\n" + newJavaCourse.displayCourseDetails());
+        output.performOutput("\n" + newJavaCourse.getCourseDetails());
         
         AdvancedJavaCourse newAdvJavaCourse = new AdvancedJavaCourse("Advanced Java", "108-047", 4.0, "Intro to Java\n");
-        System.out.println(newAdvJavaCourse.displayCourseDetails());
+        output.performOutput(newAdvJavaCourse.getCourseDetails());
 
         College addCourse = new College("Advanced Java");
-        System.out.println(addCourse.addCourseNameToDatabase());
-        System.out.println("List of courses in the database: \n" + addCourse.displayCourseNameDatabase());
+        output.performOutput(addCourse.addCourseNameToSemesterInventoryDatabase());
+        output.performOutput("List of courses in the semester inventory database: \n" + addCourse.displaySemesterInventoryDatabase());
 
     }
 
