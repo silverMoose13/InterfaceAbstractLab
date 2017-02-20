@@ -2,12 +2,14 @@ package lab2;
 
 /**
  * Describe responsibilities here. The main responsibilities of the class is to
- * provide the class information and retrieve it.
+ * provide the advanced java course information and retrieve it.
  *
  * This class achieves this by implementing all of the abstract methods from the
  * interface and writing the code for the bodies of those methods. This class
  * also has a prerequisites field since not every class will have a
- * prerequisite.
+ * prerequisite. This class also has a unique field and method related to
+ * encapsulation which is a unit selectively taught in advanced java. This is
+ * not found in the interface.
  *
  * @author Aaron Gnas
  * @version 1.00
@@ -19,6 +21,7 @@ public class AdvancedJavaCourse implements Course {
     private double numberOfCreditsForCourse;
     private String prerequisites;
     private PrintServices output;
+    private boolean completedTeachingEncapsulationUnit;
 
     public AdvancedJavaCourse(String courseName, String courseNumber, double numberOfCreditsForCourse, String prerequisites) {
         this.courseName = courseName;
@@ -82,6 +85,30 @@ public class AdvancedJavaCourse implements Course {
         }
         //this line had to be fixed. The previous code had recursed infinitely.
         this.numberOfCreditsForCourse = numberOfCreditsForCourse;
+    }
+
+    public PrintServices getOutput() {
+        return output;
+    }
+
+    public void setOutput(PrintServices output) {
+        this.output = output;
+    }
+
+    public boolean isCompletedTeachingEncapsulationUnit() {
+        return completedTeachingEncapsulationUnit;
+    }
+
+    public void setCompletedTeachingEncapsulationUnit(boolean completedTeachingEncapsulationUnit) {
+        this.completedTeachingEncapsulationUnit = completedTeachingEncapsulationUnit;
+    }
+
+    public boolean readyToAssignAllEncapsulationLabsForHomework() {
+        if (isCompletedTeachingEncapsulationUnit() == true) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     //here is the overridden method that includes the 4 fields this class supports

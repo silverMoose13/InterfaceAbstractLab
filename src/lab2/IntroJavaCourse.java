@@ -2,12 +2,14 @@ package lab2;
 
 /**
  * Describe responsibilities here. The main responsibilities of the class is to
- * provide the class information and retrieve it.
+ * provide the intro to java class information and retrieve it.
  *
  * This class achieves this by implementing all of the abstract methods from the
  * interface and writing the code for the bodies of those methods. This class
  * also has a prerequisites field since not every class will have a
- * prerequisite.
+ * prerequisite. This class also has a unique field
+ * and method related to the progression of the amount of Intro to Java content taught to
+ * the class.
  *
  * @author Aaron Gnas
  * @version 1.00
@@ -18,6 +20,7 @@ public class IntroJavaCourse implements Course {
     private String courseNumber;
     private double numberOfCreditsForCourse;
     private String prerequisites;
+    private boolean completedTeachingIntroToJavaContentToClass;
     private PrintServices output;
 
     public IntroJavaCourse(String courseName, String courseNumber, double numberOfCreditsForCourse, String prerequisites) {
@@ -82,6 +85,30 @@ public class IntroJavaCourse implements Course {
         }
         //this line had to be fixed. The previous code had recursed infinitely.
         this.numberOfCreditsForCourse = numberOfCreditsForCourse;
+    }
+
+    public boolean isCompletedTeachingIntroToJavaContentToClass() {
+        return completedTeachingIntroToJavaContentToClass;
+    }
+
+    public void setCompletedTeachingIntroToJavaContentToClass(boolean completedTeachingIntroToJavaContentToClass) {
+        this.completedTeachingIntroToJavaContentToClass = completedTeachingIntroToJavaContentToClass;
+    }
+
+    public PrintServices getOutput() {
+        return output;
+    }
+
+    public void setOutput(PrintServices output) {
+        this.output = output;
+    }
+
+    public boolean readyToAssignPartAOfIntroToJavaFinalProjectToClass() {
+        if (isCompletedTeachingIntroToJavaContentToClass() == true) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     //here is the overridden method that includes the 4 fields this class supports

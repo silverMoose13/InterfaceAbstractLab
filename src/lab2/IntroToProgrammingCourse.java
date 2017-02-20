@@ -2,11 +2,13 @@ package lab2;
 
 /**
  * Describe responsibilities here. The main responsibilities of the class is to
- * provide the class information and retrieve it.
+ * provide the intro to programming class information and retrieve it.
  *
  * This class achieves this by implementing all of the abstract methods from the
  * interface and writing the code for the bodies of those methods. This class is
- * an example where there are no prerequisites
+ * an example where there are no prerequisites. In addition to these inherited methods
+ * is has a few fields and methods of its own related to the raspberry pi which is
+ * unique to this class.
  *
  * @author Aaron Gnas
  * @version 1.00
@@ -16,6 +18,8 @@ public class IntroToProgrammingCourse implements Course {
     private String courseName;
     private String courseNumber;
     private double numberOfCreditsForCourse;
+    private int totalNumberOfRaspberryPiRequiredForClass;
+    private int numberOfFunctionalRaspberryPi;
     private PrintServices output;
 
     public IntroToProgrammingCourse(String courseName, String courseNumber, double numberOfCreditsForCourse) {
@@ -67,6 +71,30 @@ public class IntroToProgrammingCourse implements Course {
         }
         //this line had to be fixed. The previous code had recursed infinitely.
         this.numberOfCreditsForCourse = numberOfCreditsForCourse;
+    }
+
+    public int getTotalNumberOfRaspberryPiRequiredForClass() {
+        return totalNumberOfRaspberryPiRequiredForClass;
+    }
+
+    public void setTotalNumberOfRaspberryPiRequiredForClass(int numberOfRaspberryPiRequiredForClass) {
+        this.totalNumberOfRaspberryPiRequiredForClass = numberOfRaspberryPiRequiredForClass;
+    }
+
+    public int getNumberOfFunctionalRaspberryPi() {
+        return numberOfFunctionalRaspberryPi;
+    }
+
+    public void setNumberOfFunctionalRaspberryPi(int numberOfFunctionalRaspberryPi) {
+        this.numberOfFunctionalRaspberryPi = numberOfFunctionalRaspberryPi;
+    }
+
+    public boolean needToAcquireMoreRaspberryPi() {
+        if (getNumberOfFunctionalRaspberryPi() >= getTotalNumberOfRaspberryPiRequiredForClass()) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     //here is the overridden method that includes the 3 fields this class supports

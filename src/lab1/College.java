@@ -13,12 +13,8 @@ public class College {
     private String courseName;
     private ArrayList<String> semesterInventoryDatabase;
 
-    public College(String courseName) {
-        this.courseName = courseName;
-        semesterInventoryDatabase = new ArrayList();
-    }
-
     public College() {
+        semesterInventoryDatabase = new ArrayList();
     }
 
     public ArrayList<String> getCourseDatabase() {
