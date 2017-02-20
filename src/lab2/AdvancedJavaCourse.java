@@ -31,6 +31,11 @@ public class AdvancedJavaCourse implements Course {
         output = new PrintServices();
     }
 
+    //for the non-essential course info
+    public AdvancedJavaCourse(boolean completedTeachingEncapsulationUnit) {
+        this.completedTeachingEncapsulationUnit = completedTeachingEncapsulationUnit;
+    }
+
     public String getPrerequisites() {
         return prerequisites;
     }

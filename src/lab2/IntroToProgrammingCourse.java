@@ -6,9 +6,9 @@ package lab2;
  *
  * This class achieves this by implementing all of the abstract methods from the
  * interface and writing the code for the bodies of those methods. This class is
- * an example where there are no prerequisites. In addition to these inherited methods
- * is has a few fields and methods of its own related to the raspberry pi which is
- * unique to this class.
+ * an example where there are no prerequisites. In addition to these inherited
+ * methods is has a few fields and methods of its own related to the raspberry
+ * pi which is unique to this class.
  *
  * @author Aaron Gnas
  * @version 1.00
@@ -27,6 +27,12 @@ public class IntroToProgrammingCourse implements Course {
         this.courseNumber = courseNumber;
         this.numberOfCreditsForCourse = numberOfCreditsForCourse;
         output = new PrintServices();
+    }
+
+    //a different constructor was established to show non-essential class information.
+    public IntroToProgrammingCourse(int totalNumberOfRaspberryPiRequiredForClass, int numberOfFunctionalRaspberryPi) {
+        this.totalNumberOfRaspberryPiRequiredForClass = totalNumberOfRaspberryPiRequiredForClass;
+        this.numberOfFunctionalRaspberryPi = numberOfFunctionalRaspberryPi;
     }
 
     @Override

@@ -30,6 +30,11 @@ public class IntroJavaCourse extends Course {
         this.prerequisites = prerequisites;
         output = new PrintServices();
     }
+    
+    //a difference constructor was established to show non-essential class information.
+    public IntroJavaCourse(boolean completedTeachingIntroToJavaContentToClass) {
+        this.completedTeachingIntroToJavaContentToClass = completedTeachingIntroToJavaContentToClass;
+    }
 
     //there are only 2 classes at this point that use prereqs so it is cleaner to just leave it
     public String getPrerequisites() {

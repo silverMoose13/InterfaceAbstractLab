@@ -7,9 +7,8 @@ package lab2;
  * This class achieves this by implementing all of the abstract methods from the
  * interface and writing the code for the bodies of those methods. This class
  * also has a prerequisites field since not every class will have a
- * prerequisite. This class also has a unique field
- * and method related to the progression of the amount of Intro to Java content taught to
- * the class.
+ * prerequisite. This class also has a unique field and method related to the
+ * progression of the amount of Intro to Java content taught to the class.
  *
  * @author Aaron Gnas
  * @version 1.00
@@ -29,6 +28,11 @@ public class IntroJavaCourse implements Course {
         this.numberOfCreditsForCourse = numberOfCreditsForCourse;
         this.prerequisites = prerequisites;
         output = new PrintServices();
+    }
+
+    //a difference constructor was established to show non-essential class information.
+    public IntroJavaCourse(boolean completedTeachingIntroToJavaContentToClass) {
+        this.completedTeachingIntroToJavaContentToClass = completedTeachingIntroToJavaContentToClass;
     }
 
     public String getPrerequisites() {

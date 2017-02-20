@@ -34,6 +34,11 @@ public class AdvancedJavaCourse extends Course {
         this.prerequisites = prerequisites;
         output = new PrintServices();
     }
+    
+    //for the non-essential course info
+    public AdvancedJavaCourse(boolean completedTeachingEncapsulationUnit) {
+        this.completedTeachingEncapsulationUnit = completedTeachingEncapsulationUnit;
+    }
 
     //there are only 2 classes at this point that use prereqs so it is cleaner to just leave it
     public String getPrerequisites() {

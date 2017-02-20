@@ -4,15 +4,16 @@ package lab1;
  * Describe responsibilities here. NOTE: this class has NO PREREQUISITES! Do not
  * change this fact.
  *
- * The main responsibility of this course is to acquire information related to the
- * intro to programming course and retrieve them. This is the same as the other 2 subclasses. 
- * However, what varies slightly is what this class needs to do in order to achieve that.
+ * The main responsibility of this course is to acquire information related to
+ * the intro to programming course and retrieve them. This is the same as the
+ * other 2 subclasses. However, what varies slightly is what this class needs to
+ * do in order to achieve that.
  *
- * IntroToProgramming has a slightly varied role than the other 2 java classes in regards
- * to the getCourseDetails method.
- * Instead of having 4 fields to gather information on using the superclass
- * concrete methods, there are only 3 fields. Once this information is obtained,
- * the course details will be retrieved using an overridden method.
+ * IntroToProgramming has a slightly varied role than the other 2 java classes
+ * in regards to the getCourseDetails method. Instead of having 4 fields to
+ * gather information on using the superclass concrete methods, there are only 3
+ * fields. Once this information is obtained, the course details will be
+ * retrieved using an overridden method.
  *
  *
  * @author Aaron Gnas
@@ -27,6 +28,12 @@ public class IntroToProgrammingCourse extends Course {
         this.setCourseName(courseName);
         this.setCourseNumber(courseNumber);
         this.setNumberOfCreditsForCourse(numberOfCreditsForCourse);
+    }
+
+    //a different constructor was established to show non-essential class information.
+    public IntroToProgrammingCourse(int totalNumberOfRaspberryPiRequiredForClass, int numberOfFunctionalRaspberryPi) {
+        this.totalNumberOfRaspberryPiRequiredForClass = totalNumberOfRaspberryPiRequiredForClass;
+        this.numberOfFunctionalRaspberryPi = numberOfFunctionalRaspberryPi;
     }
 
     //this class has only 3 fields it needs to use
@@ -57,9 +64,9 @@ public class IntroToProgrammingCourse extends Course {
 
     public boolean needToAcquireMoreRaspberryPi() {
         if (getNumberOfFunctionalRaspberryPi() >= getTotalNumberOfRaspberryPiRequiredForClass()) {
-            return false;
-        } else {
             return true;
+        } else {
+            return false;
         }
     }
 
