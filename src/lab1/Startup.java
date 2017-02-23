@@ -50,7 +50,6 @@ public class Startup {
         AdvancedJavaCourse encapCheck = new AdvancedJavaCourse(true);
         output.performOutput("The students are ready to be assigned all the encapsulation labs"
                 + " for homework: " + encapCheck.isCompletedTeachingEncapsulationUnit());
-
     }
 
 }

@@ -16,23 +16,13 @@ package lab1;
 public class AdvancedJavaCourse extends Course {
 
     private String prerequisites;
-    private PrintServices output;
     private boolean completedTeachingEncapsulationUnit;
-
-    public PrintServices getOutput() {
-        return output;
-    }
-
-    public void setOutput(PrintServices output) {
-        this.output = output;
-    }
 
     public AdvancedJavaCourse(String courseName, String courseNumber, double numberOfCreditsForCourse, String prerequisites) {
         this.setCourseName(courseName);
         this.setCourseNumber(courseNumber);
         this.setNumberOfCreditsForCourse(numberOfCreditsForCourse);
         this.prerequisites = prerequisites;
-        output = new PrintServices();
     }
     
     //for the non-essential course info
@@ -47,8 +37,7 @@ public class AdvancedJavaCourse extends Course {
 
     public void setPrerequisites(String prerequisites) {
         if (prerequisites == null || prerequisites.length() == 0) {
-            output.performOutput("Error: prerequisites cannot be null or an empty string");
-            System.exit(0);
+            throw new IllegalArgumentException("Error: prerequisites cannot be null or an empty string");
         }
         this.prerequisites = prerequisites;
     }

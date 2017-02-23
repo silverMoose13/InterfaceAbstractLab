@@ -11,23 +11,17 @@ public abstract class Course {
     private String courseNumber;
     //refactored the name of this member as credits wasn't descriptive enough
     private double numberOfCreditsForCourse;
-    private PrintServices output;
-
-    public Course() {
-        output = new PrintServices();
-    }
 
     public String getCourseName() {
         return courseName;
     }
 
     //The setter for course name should always stay this way. This is why I have 
-    //moved it to the abstract class Course. However, it is
-    //not set to final because the course name could change in time.
-    public void setCourseName(String courseName) {
+    //moved it to the abstract class Course. Set to final since this won't change.
+    public final void setCourseName(String courseName) {
         if (courseName == null || courseName.length() == 0) {
-            output.performOutput("Error: courseName cannot be null or an empty string");
-            System.exit(0);
+            throw new IllegalArgumentException("Error: courseName cannot be "
+                    + "null or an empty string");
         }
         this.courseName = courseName;
     }
@@ -40,9 +34,8 @@ public abstract class Course {
     //As a result, it is set to final and placed in the abstract superclass Course.
     public final void setCourseNumber(String courseNumber) {
         if (courseNumber == null || courseNumber.length() < 6 || courseNumber.length() > 7) {
-            output.performOutput("Error: courseNumber cannot be null and must follow"
+            throw new IllegalArgumentException("Error: courseNumber cannot be null and must follow"
                     + "format of 111-111 or 111111.");
-            System.exit(0);
         }
         this.courseNumber = courseNumber;
     }
@@ -55,8 +48,7 @@ public abstract class Course {
     //but the body of the method won't
     public final void setNumberOfCreditsForCourse(double numberOfCreditsForCourse) {
         if (numberOfCreditsForCourse < 0.0 || numberOfCreditsForCourse > 5.0) {
-            output.performOutput("Error: credits must be in the range 0.0 to 5.0");
-            System.exit(0);
+            throw new IllegalArgumentException("Error: credits must be in the range 0.0 to 5.0");
         }
         //this line had to be fixed. The previous code had recursed infinitely.
         this.numberOfCreditsForCourse = numberOfCreditsForCourse;

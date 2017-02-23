@@ -20,13 +20,11 @@ public class IntroToProgrammingCourse implements Course {
     private double numberOfCreditsForCourse;
     private int totalNumberOfRaspberryPiRequiredForClass;
     private int numberOfFunctionalRaspberryPi;
-    private PrintServices output;
 
     public IntroToProgrammingCourse(String courseName, String courseNumber, double numberOfCreditsForCourse) {
         this.courseName = courseName;
         this.courseNumber = courseNumber;
         this.numberOfCreditsForCourse = numberOfCreditsForCourse;
-        output = new PrintServices();
     }
 
     //a different constructor was established to show non-essential class information.
@@ -43,8 +41,8 @@ public class IntroToProgrammingCourse implements Course {
     @Override
     public final void setCourseName(String courseName) {
         if (courseName == null || courseName.length() == 0) {
-            output.performOutput("Error: courseName cannot be null or an empty string");
-            System.exit(0);
+            throw new IllegalArgumentException("Error: courseName cannot be "
+                    + "null or an empty string");
         }
         this.courseName = courseName;
     }
@@ -57,9 +55,8 @@ public class IntroToProgrammingCourse implements Course {
     @Override
     public final void setCourseNumber(String courseNumber) {
         if (courseNumber == null || courseNumber.length() < 6 || courseNumber.length() > 7) {
-            output.performOutput("Error: courseNumber cannot be null and must follow"
+            throw new IllegalArgumentException("Error: courseNumber cannot be null and must follow"
                     + "format of 111-111 or 111111.");
-            System.exit(0);
         }
         this.courseNumber = courseNumber;
     }
@@ -72,8 +69,7 @@ public class IntroToProgrammingCourse implements Course {
     @Override
     public final void setNumberOfCreditsForCourse(double numberOfCreditsForCourse) {
         if (numberOfCreditsForCourse < 0.0 || numberOfCreditsForCourse > 5.0) {
-            output.performOutput("Error: credits must be in the range 0.0 to 5.0");
-            System.exit(0);
+            throw new IllegalArgumentException("Error: credits must be in the range 0.0 to 5.0");
         }
         //this line had to be fixed. The previous code had recursed infinitely.
         this.numberOfCreditsForCourse = numberOfCreditsForCourse;

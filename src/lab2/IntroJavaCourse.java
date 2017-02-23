@@ -20,14 +20,12 @@ public class IntroJavaCourse implements Course {
     private double numberOfCreditsForCourse;
     private String prerequisites;
     private boolean completedTeachingIntroToJavaContentToClass;
-    private PrintServices output;
 
     public IntroJavaCourse(String courseName, String courseNumber, double numberOfCreditsForCourse, String prerequisites) {
         this.courseName = courseName;
         this.courseNumber = courseNumber;
         this.numberOfCreditsForCourse = numberOfCreditsForCourse;
         this.prerequisites = prerequisites;
-        output = new PrintServices();
     }
 
     //a difference constructor was established to show non-essential class information.
@@ -41,8 +39,7 @@ public class IntroJavaCourse implements Course {
 
     public void setPrerequisites(String prerequisites) {
         if (prerequisites == null || prerequisites.length() == 0) {
-            output.performOutput("Error: prerequisites cannot be null or an empty string");
-            System.exit(0);
+            throw new IllegalArgumentException("Error: prerequisites cannot be null or an empty string");
         }
         this.prerequisites = prerequisites;
     }
@@ -55,8 +52,7 @@ public class IntroJavaCourse implements Course {
     @Override
     public final void setCourseName(String courseName) {
         if (courseName == null || courseName.length() == 0) {
-            output.performOutput("Error: courseName cannot be null or an empty string");
-            System.exit(0);
+            throw new IllegalArgumentException("Error: courseName cannot be null or an empty string");
         }
         this.courseName = courseName;
     }
@@ -69,9 +65,8 @@ public class IntroJavaCourse implements Course {
     @Override
     public final void setCourseNumber(String courseNumber) {
         if (courseNumber == null || courseNumber.length() < 6 || courseNumber.length() > 7) {
-            output.performOutput("Error: courseNumber cannot be null and must follow"
-                    + "format of 111-111 or 111111.");
-            System.exit(0);
+            throw new IllegalArgumentException("Error: courseNumber cannot be null "
+                    + "and must follow format of 111-111 or 111111.");
         }
         this.courseNumber = courseNumber;
     }
@@ -84,8 +79,8 @@ public class IntroJavaCourse implements Course {
     @Override
     public final void setNumberOfCreditsForCourse(double numberOfCreditsForCourse) {
         if (numberOfCreditsForCourse < 0.0 || numberOfCreditsForCourse > 5.0) {
-            output.performOutput("Error: credits must be in the range 0.0 to 5.0");
-            System.exit(0);
+            throw new IllegalArgumentException("Error: credits must be in the range"
+                    + " 0.0 to 5.0");
         }
         //this line had to be fixed. The previous code had recursed infinitely.
         this.numberOfCreditsForCourse = numberOfCreditsForCourse;
@@ -97,14 +92,6 @@ public class IntroJavaCourse implements Course {
 
     public void setCompletedTeachingIntroToJavaContentToClass(boolean completedTeachingIntroToJavaContentToClass) {
         this.completedTeachingIntroToJavaContentToClass = completedTeachingIntroToJavaContentToClass;
-    }
-
-    public PrintServices getOutput() {
-        return output;
-    }
-
-    public void setOutput(PrintServices output) {
-        this.output = output;
     }
 
     public boolean readyToAssignPartAOfIntroToJavaFinalProjectToClass() {
